@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora</title>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+    const vaciar = () => {
+      document.getElementById("pantalla").value = "";
+    }
+
+    const cuadrado = () => {
+      let num = document.getElementById("pantalla");
+      num.value = num.value * num.value;
+    }
+    const Mod = () => {
+      let num = document.getElementById("pantalla");
+      num.value =  num.value % numeroguardado;
+    }
+
+  </script>
+</head>
+<body>
+  <h1>Calculadora de Macaquiño</h1>
+  Número:
+  <p><input type="text" id="pantalla" onclick="vaciar()"></p>
+  <p>El resultado es: <span class="r">...</span></p>
+  <h2>Info sobre el número</h2>
+  <p><button id="cuadrado" onclick="cuadrado()">x<sup>2</sup></button>
+  <button id="modulo" onclick="Mod()">Mod</button>
+  <button id="factorial">n!</button></p>
+  <h2>Operaciones Binarias</h2> 
+ </body>
+ <script>
+  document.querySelector('#factorial').addEventListener('click', () =>{
+      const dato = document.querySelector('#pantalla').value;
+      let r = 1;
+      for(let i = dato; i>0; i--){
+          r *= i;
+      }
+      document.querySelector('.r').innerHTML = r;
+      numeroguardado = dato;
+  })
+
+</script>
+</script>
+</html>
